@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+         * {
+             margin: 0;
+             padding: 0;
+             
+         }
+         
+         
+         .container {
+             width: 100%;
+             height: 100vh;
+             background-image:url('pic3.jpg');
+             background-size: cover;
+             background-repeat: no-repeat;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             
+         }
+         
+         .container h1 {
+             color: rgb(238, 239, 242);
+             font-weight: 700;
+             font-size: 50px;
+             text-align:left;
+            
+         }
+         
+         .converter-row {
+             display: flex;
+             width: 20%;
+             justify-content: space-between;
+             align-items: center;
+             /* background: rgb(36, 0, 56); */
+             border-radius: 10px;
+             padding: 50px 20px;
+             
+             
+         }
+         
+         .col {
+             color: greenyellow;
+             flex-basis: 32%;
+             text-align: center;
+            
+         }
+         
+         .col label {
+             font-size: 25px;
+             font-weight: 500;
+             margin-bottom: 10px;
+             color: #060606;
+         
+         }
+         
+         .col input {
+             width: 150px;
+             height: 40px;
+             background: rgb(222, 225, 231);
+             border-radius: 20px;
+             text-align: center;
+             
+            
+             
+         }
+     </style>
+ </head>
+ <body>
+ 
+    
+     <div class="container">
+         <h1 >Temperature Converter</h1>
+         <pre style="color: rgb(16, 234, 186);text-align: center;font-family:'Times New Roman', Times, serif; font-size:larger;padding: 4em 1em 3em"><b>
+            You can either enter value in Fahrenheit and get output in Celsius 
+            OR 
+            You can enter value in Celsius and get output in Fahrenheit</b> </pre>
+         <div class="converter-row">
+             
+     
+             <div class="col">
+                 <label>Celsius</label>
+                 <input type="number" id="celsius" placeholder="Enter Celsius value">
+             </div>
+             <div class="col">
+                
+                <label>Fahrenheit</label>
+                <input type="number" id="fahrenheit" placeholder=" Enter Fahrenheit value">
+            </div>
+     
+           
+         </div>
+     </div>
+     
+     <script>
+         let celsius = document.getElementById('celsius');
+         let fahrenheit = document.getElementById('fahrenheit');
+         let kelvin = document.getElementById('kelvin');
+         celsius.oninput = function () {
+             let f = (parseFloat(celsius.value) * 9) / 5 + 32;
+             fahrenheit.value = parseFloat(f.toFixed(2));
+         
+         }
+         fahrenheit.oninput = function () {
+             let c = ((parseFloat(
+                 fahrenheit.value) - 32) * 5) / 9;
+             celsius.value = parseFloat(c.toFixed(2));
+         
+         }
+         
+     </script>
+     
+     
+ </body>
+ </html>
